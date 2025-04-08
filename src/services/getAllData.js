@@ -5,7 +5,7 @@ export const getAllData = async () => {
 
     const AllData = response.data;
 
-    console.log(`GET: Here's the list of todos`, AllData);
+    console.log(AllData);
 
     return AllData;
   } catch (errors) {
