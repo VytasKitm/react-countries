@@ -18,6 +18,7 @@ function App() {
         <Route path="/country/:name" element={<CountryInfo CountryData={countryData} />} />
       </Routes>
     </Router> */}
+
   </DataProvider>
   {/* {console.log(getRegionData("europe"))} */}
   </>;

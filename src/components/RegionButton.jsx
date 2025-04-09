@@ -1,4 +1,4 @@
-import {React, useContext} from 'react'
+import {React, useContext, useContext} from 'react'
 import { getRegionData } from '../services/getRegionData.js'
 import DataContext  from '../context/DataContext.jsx'
 
