@@ -1,45 +1,44 @@
 // /components/CountryInfo.jsx
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-const CountryInfo = ({ CountryData }) => {
-  const { name } = useParams();
-  const navigate = useNavigate();
-
-  const country = CountryData.find(
-    (c) => c.name.common === name
-  );
-
-  if (!country) return <p>Šalis nerasta.</p>;
+export const CountryInfo = () => {
+  const {state} = useLocation()
+  const countryData = state?.countryData
+  console.log("country info country data")
+  console.log(countryData)
+  
+  if (!countryData) return <p>Šalis nerasta.</p>;
 
   const {
     flags,
-    name: { common },
     capital,
+    name,
     region,
     population,
     area,
     currencies,
     languages,
     borders,
-  } = country;
+  } = countryData;
 
   return (
     <div className="countryInfo">
-      <img src={flags.svg} alt={`Vėliava: ${common}`} />
-      <h1>{common}</h1>
-      <p><strong>Sostinė:</strong> {capital?.[0]}</p>
+      <img src={flags["png"]} alt={`Vėliava: ${name.common}`}/>
+      <h1>{name.common}</h1>
+      <strong>Sostinė(s):</strong> {capital.map((el,id)=><p key={id}>{el}</p>)}
       <p><strong>Regionas:</strong> {region}</p>
-      <p><strong>Gyventojų kiekis:</strong> {population.toLocaleString()}</p>
-      <p><strong>Plotas:</strong> {area.toLocaleString()} km²</p>
-      <p><strong>Valiuta:</strong> {Object.values(currencies || {}).map(c => c.name).join(', ')}</p>
+      <p><strong>Gyventojų kiekis:</strong> {population}</p>
+      <p><strong>Plotas:</strong> {area} km²</p>
+      <p><strong>Valiuta:</strong> {Object.values(currencies || {} ).map(c => c.name).join(', ')}</p>
       <p><strong>Kalbos:</strong> {Object.values(languages || {}).join(', ')}</p>
-      {borders?.length > 0 && (
+      {borders.length > 0 && (
         <p><strong>Kaimynai:</strong> {borders.join(', ')}</p>
       )}
-      <button onClick={() => navigate('/')}>Grįžti</button>
+      <Link to={"/"}>
+        <button>Grįžti</button>
+      </Link>
     </div>
   );
 };
 
-export default CountryInfo;
