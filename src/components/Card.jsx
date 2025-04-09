@@ -1,5 +1,5 @@
 import {React, useContext} from 'react'
-import ShowMoreData from './ShowMoreData';
+import {ShowMoreData} from './ShowMoreData';
 import DataContext  from '../context/DataContext.jsx'
 
 export function Card() {
@@ -11,7 +11,7 @@ export function Card() {
                 <p>Name: {data[0]?.name.common || "Nera"}</p>
                 <p>Capital: {data[0]?.capital[0] || "Nera"}</p>
                 <p>Region: {data[0]?.region || "Nera"}</p>
-        <ShowMoreData/>
+        <ShowMoreData CountryData={data[0]}/>
         </div>
   );
 }

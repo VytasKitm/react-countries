@@ -13,7 +13,6 @@ export const RegionButton = ({region}) => {
   return (
     <div>
         <button onClick={()=> writeRegionData()}>{region}</button>
-        {console.log(data)}
     </div>
   )
 }
