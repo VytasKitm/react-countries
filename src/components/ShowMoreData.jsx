@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ShowMoreData = ({ CountryData }) => {
+export const ShowMoreData = ({ CountryData }) => {
   return (
     <div>
       {CountryData.map((country, index) => (

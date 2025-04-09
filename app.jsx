@@ -7,12 +7,7 @@ import countryData from './data/countries.json'; // arba kaip pas tave ateina
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<ShowMoreData CountryData={countryData} />} />
-        <Route path="/country/:name" element={<CountryInfo CountryData={countryData} />} />
-      </Routes>
-    </Router>
+
   );
 }
 
