@@ -1,5 +1,4 @@
 import { useState, Route, Router, Routes } from "react";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import { getAllData } from "./services/getAllData";
 import { getRegionData } from "./services/getRegionData";
