@@ -1,18 +1,26 @@
-import { useState, Router, Routes, Route } from "react";
+import { useState, Route, Router, Routes } from "react";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import { getAllData } from "./services/getAllData";
-import { ShowMoreData} from "./components/ShowMoreData.jsx"
-
+import { getRegionData } from "./services/getRegionData";
+import { RegionButton } from "./components/RegionButton";
+import { DataProvider } from "./context/DataContext";
+import { Card } from "./components/Card"
 
 function App() {
 
   return <>
-      <Router>
+  <DataProvider>
+    <RegionButton region={"europe"}/>
+    <Card/>
+    {/* <Router>
       <Routes>
         <Route path="/" element={<ShowMoreData CountryData={countryData} />} />
         <Route path="/country/:name" element={<CountryInfo CountryData={countryData} />} />
       </Routes>
-    </Router>
+    </Router> */}
+  </DataProvider>
+  {/* {console.log(getRegionData("europe"))} */}
   </>;
 }
 
