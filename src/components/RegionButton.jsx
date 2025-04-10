@@ -2,8 +2,18 @@ import { React, useContext } from "react";
 import { getRegionData } from "../services/getRegionData.js";
 import DataContext from "../context/DataContext.jsx";
 
-export const RegionButton = ({region}) => {
-        const {setData} = useContext(DataContext)
+export const RegionButton = ({ region }) => {
+  const { data, setData } = useContext(DataContext);
+  const regionColors = {
+    Europe: "#FF5733", // Vibrant Red-Orange
+    Asia: "#2980B9", // Bright Blue
+    Africa: "#27AE60", // Rich Green
+    Americas: "#F39C12", // Golden Yellow
+    Oceania: "#1ABC9C", // Teal
+    Antarctica: "#BDC3C7", // Light Gray (Icy/Cold)
+    "North America": "#E74C3C", // Bright Red
+    "South America": "#D35400", // Strong Orange
+  };
 
   const writeRegionData = async () => {
     const regionData = await getRegionData(region);
@@ -12,7 +22,13 @@ export const RegionButton = ({region}) => {
 
   return (
     <div>
-      <button onClick={() => writeRegionData()}>{region}</button>
+      {console.log(region)}
+      <button
+        onClick={() => writeRegionData()}
+        style={{ backgroundColor: regionColors[region] }}
+      >
+        {region}
+      </button>
     </div>
   );
 };

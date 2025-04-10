@@ -12,7 +12,7 @@ export const Header = () => {
       <RegionButton region={"Africa"} />
       <RegionButton region={"Oceania"} />
       <RegionButton region={"North America"} />
-      <RegionButton region={"Antarctica"} />
+      <RegionButton region={"Antarctic"} />
       <RegionButton region={"South America"} />
       <SearchComponent />
     </div>

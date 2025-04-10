@@ -1,15 +1,35 @@
-import {React} from 'react'
-import {ShowMoreData} from './ShowMoreData';
+import { React } from "react";
+import { ShowMoreData } from "./ShowMoreData";
 
-export function Card({countryData}) {
+export function Card({ countryData }) {
+  const regionColors = {
+    Europe: "#FF5733",
+    Asia: "#2980B9",
+    Africa: "#27AE60",
+    Americas: "#F39C12",
+    Oceania: "#1ABC9C",
+    Antarctica: "#BDC3C7",
+    "North America": "#E74C3C",
+    "South America": "#D35400",
+  };
   return (
-        <div style={{ width: '18rem', height: '25rem', border: "black solid" }}>
-                <img src={countryData?.flags["png"]} alt="" style={{height: '10rem',width: '98%',display: "block",margin: "auto", border: "red solid"}}/>
-                <p>Name: {countryData?.name.common || "Nera"}</p>
-                <p>Capital: {countryData.capital?.map((el, index) => <span key={index}>{el}. </span>) || "Nera"}</p>
-                <p>Region: {countryData?.continents || "Nera"}</p>
-        <ShowMoreData countryData={countryData}/>
-        </div>
+    <div
+      className="card"
+      style={{
+        backgroundColor: regionColors[countryData?.continents[0]],
+      }}
+    >
+      {console.log(countryData)}
+      <img src={countryData?.flags["png"]} alt="" />
+      <h1> {countryData?.name.common || "Nera"}</h1>
+      <p>
+        Capital:{" "}
+        {countryData.capital?.map((el, index) => (
+          <span key={index}>{el}. </span>
+        )) || "Nera"}
+      </p>
+      <p>Region: {countryData?.region || "Nera"}</p>
+      <ShowMoreData countryData={countryData} />
+    </div>
   );
 }
-
