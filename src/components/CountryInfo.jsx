@@ -31,7 +31,7 @@ export const CountryInfo = () => {
       <p><strong>Valiuta:</strong> {Object.values(currencies || {}).map(c => c.name).join(', ')}</p>
       <p><strong>Kalbos:</strong> {Object.values(languages || {}).join(', ')}</p>
       <p><strong>Kaimynai:</strong> {borders && borders.map((el,id)=><span key={id}>{el}. </span>) || "Nera"}</p>
-      <Link to={"/"}>
+      <Link to={`/`}>
         <button>Grįžti</button>
       </Link>
     </div>
