@@ -2,7 +2,7 @@ import { useState, useContext } from 'react'
 import DataContext from '../context/DataContext'
 import { searchByName } from '../services/searchByName'
 
-const SearchComponent = () => {
+export const SearchComponent = () => {
   const [inputValue, setInputValue] = useState('')
   const { setData } = useContext(DataContext)
 
