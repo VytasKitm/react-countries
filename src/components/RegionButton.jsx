@@ -14,6 +14,7 @@ export const RegionButton = ({ region }) => {
     "North America": "#E74C3C", // Bright Red
     "South America": "#D35400", // Strong Orange
   };
+
   const writeRegionData = async () => {
     const regionData = await getRegionData(region);
     setData(regionData);
