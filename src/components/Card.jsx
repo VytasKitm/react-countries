@@ -7,7 +7,7 @@ export function Card({countryData}) {
                 <img src={countryData?.flags["png"]} alt="" style={{height: '10rem',width: '98%',display: "block",margin: "auto", border: "red solid"}}/>
                 <p>Name: {countryData?.name.common || "Nera"}</p>
                 <p>Capital: {countryData.capital?.map((el, index) => <span key={index}>{el}. </span>) || "Nera"}</p>
-                <p>Region: {countryData?.region || "Nera"}</p>
+                <p>Region: {countryData?.continents || "Nera"}</p>
         <ShowMoreData countryData={countryData}/>
         </div>
   );
