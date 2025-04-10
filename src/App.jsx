@@ -6,6 +6,8 @@ import { DataProvider } from "./context/DataContext";
 import { CountryInfo} from "./components/CountryInfo"
 import { SearchComponent } from "./components/SearchComponent";
 import { Main } from "./components/Main";
+import { Header } from "./components/Header";
+
 
 function App() {
 
@@ -15,10 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={
           <DataProvider>
-                      <RegionButton region={"europe"}/>
-                      <RegionButton region={"asia"}/>
-                      <RegionButton region={"africa"}/>
-                      <SearchComponent/>
+                      <Header/>
                       <Main/>
           </DataProvider>
         } />
