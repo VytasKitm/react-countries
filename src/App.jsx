@@ -4,8 +4,8 @@ import "./App.css";
 import { RegionButton } from "./components/RegionButton";
 import { DataProvider } from "./context/DataContext";
 import { CountryInfo} from "./components/CountryInfo"
-import { Card } from "./components/Card"
 import { SearchComponent } from "./components/SearchComponent";
+import { Main } from "./components/Main";
 
 function App() {
 
@@ -17,9 +17,9 @@ function App() {
           <DataProvider>
                       <RegionButton region={"europe"}/>
                       <RegionButton region={"asia"}/>
+                      <RegionButton region={"africa"}/>
                       <SearchComponent/>
-                      <Card/>
-                      <Card/>
+                      <Main/>
           </DataProvider>
         } />
         <Route path="/details/:name" element={<CountryInfo/>} />
