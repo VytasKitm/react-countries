@@ -1,13 +1,15 @@
-import React, { useState, useContext } from 'react'
+import { useState, useContext } from 'react'
 import DataContext from '../context/DataContext'
+import { searchByName } from '../services/searchByName'
 
 const SearchComponent = () => {
   const [inputValue, setInputValue] = useState('')
   const { setData } = useContext(DataContext)
 
-  const handleSearch = () => {
-    setData(inputValue)
-  }
+  const handleSearch = async () => {
+    const result = await searchByName(inputValue)
+    setData(result)
+  };
 
   return (
     <div>
@@ -21,4 +23,3 @@ const SearchComponent = () => {
   )
 }
 
-export default SearchComponent
