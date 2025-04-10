@@ -5,8 +5,6 @@ export const getAllData = async () => {
 
     const AllData = response.data;
 
-    console.log(AllData,"bambam"); 
-
     return AllData;
   } catch (errors) {
     console.error(errors);
