@@ -12,7 +12,7 @@ export const CountryInfo = () => {
     flags,
     capital,
     name,
-    region,
+    continents,
     population,
     area,
     currencies,
@@ -25,7 +25,7 @@ export const CountryInfo = () => {
       <img src={flags["png"]} alt={`Vėliava: ${name.common}`}/>
       <h1>{name.common}</h1>
       <p><strong>Sostinė(s):</strong> {capital.map((el,id)=><span key={id}>{el}. </span>)}</p>
-      <p><strong>Regionas:</strong> {region}</p>
+      <p><strong>Regionas:</strong> {continents}</p>
       <p><strong>Gyventojų kiekis:</strong> {population}</p>
       <p><strong>Plotas:</strong> {area} km²</p>
       <p><strong>Valiuta:</strong> {Object.values(currencies || {}).map(c => c.name).join(', ')}</p>

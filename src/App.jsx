@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./style.css";
+// import "./style.css";
 import { BrowserRouter, Routes, Route} from "react-router-dom"
 import "./App.css";
 import { DataProvider } from "./context/DataContext";
