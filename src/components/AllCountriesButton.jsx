@@ -12,7 +12,9 @@ export const AllCountriesButton = () => {
 
   return (
     <div>
-      <button onClick={() => writeData()}>All</button>
+      <button onClick={() => writeData()} style={{ backgroundColor: "black" }}>
+        All
+      </button>
     </div>
   );
 };
