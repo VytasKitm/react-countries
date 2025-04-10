@@ -1,9 +1,16 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   gap: 20px;
   padding: 10px;
+  width: 97vw;
 }
 
 .header button {
@@ -22,7 +29,10 @@
   min-width: 120px;
   max-width: 180px;
   text-align: center;
-  display: inline-block;
+  /* display: inline-block; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header button:hover {
@@ -44,12 +54,19 @@
   border-color: #ecf0f1;
 }
 
+.antBtn{
+  color: black;
+  font-size: large;
+}
+
+
 .main {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 50px;
   padding: 5px;
   margin: 20px;
+  margin-right: 50px;
 }
 
 .countryInfo {
@@ -152,6 +169,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   margin: 1rem;
@@ -164,18 +182,29 @@
   overflow: hidden;
 }
 
-.card img {
-  width: 10rem;
-  height: 10rem;
-  object-fit: cover;
+.imgContainer {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 12px;
+  overflow: hidden;
   border: 4px solid #fff;
+  display: block;
+}
+
+.card img {
+  max-width: 10rem;
+  max-height: 8rem;
+  object-fit: contain;
   display: block;
 }
 
 /* Text styling */
 .card p {
   margin: 8px 0;
+  width: 100%;
   font-size: 1rem;
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -189,6 +218,15 @@
   margin-right: 5px;
   font-style: italic;
   color: #777;
+}
+
+.card h1 {
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow: scroll;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 
 .card button {

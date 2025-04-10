@@ -17,15 +17,15 @@ export function Card({ countryData }) {
       className="card"
       style={{
         backgroundColor: regionColors[countryData?.continents[0]],
-      }}
-    >
-      {console.log(countryData)}
-      <img src={countryData?.flags["png"]} alt="" />
+      }}>   
+      <div className="imgContainer">
+        <img src={countryData?.flags["png"]} alt="" />
+        </div>
       <h1> {countryData?.name.common || "Nera"}</h1>
       <p>
-        Capital:{" "}
+        Capital:
         {countryData.capital?.map((el, index) => (
-          <span key={index}>{el}. </span>
+          <span key={index}> {el}. </span>
         )) || "Nera"}
       </p>
       <p>Region: {countryData?.region || "Nera"}</p>
