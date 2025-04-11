@@ -1,7 +1,7 @@
-.root {
+#root {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  min-height: 100vh;
 }
 
 .header {
@@ -270,4 +270,21 @@
 
 .search button:hover {
   background-color: #0056b3;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  margin-right: 5px;
+  font-style: italic;
+  color: #777;
+}
+
+.footer span {
+  font-style: normal;
 }
