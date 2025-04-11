@@ -1,18 +1,29 @@
-import { React, useContext } from "react";
+import { React, useContext, useEffect, useState } from "react";
 import { Card } from "./Card";
 import DataContext from "../context/DataContext";
 
 export const Main = () => {
   const { data } = useContext(DataContext);
-  console.log(data);
+  const [dataSorted, setDataSorted] = useState([]) 
+
+  useEffect(() => {
+        if (!data) {return}
+        const sorted = [...data].sort((a,b) => {
+                return a.name.common.localeCompare(b.name.common)
+        })
+        setDataSorted(sorted)
+        
+        console.log("Sorted Array:")
+        console.log(sorted)
+  },[data])
 
   return (
     <div className="main">
       {console.log(data)}
       {!data ? (
-        <h2>Saliu nerasta</h2>
+        <h2>Šalių nerasta!</h2>
       ) : (
-        data.map((country, index) => <Card key={index} countryData={country} />)
+        dataSorted.map((country, index) => <Card key={index} countryData={country} />)
       )}
     </div>
   );

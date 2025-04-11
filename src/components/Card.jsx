@@ -21,14 +21,14 @@ export function Card({ countryData }) {
       <div className="imgContainer">
         <img src={countryData?.flags["png"]} alt="" />
         </div>
-      <h1> {countryData?.name.common || "Nera"}</h1>
+      <h1> {countryData?.name.common || "Nėra"}</h1>
       <p>
         Capital:
         {countryData.capital?.map((el, index) => (
           <span key={index}> {el}. </span>
-        )) || "Nera"}
+        )) || "Nėra"}
       </p>
-      <p>Region: {countryData?.region || "Nera"}</p>
+      <p>Region: {countryData?.region || "Nėra"}</p>
       <ShowMoreData countryData={countryData} />
     </div>
   );
