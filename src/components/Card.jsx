@@ -24,8 +24,7 @@ export function Card({ countryData }) {
 			</div>
 		<h1> {countryData?.name.common || "Nėra"}</h1>
 		<p>
-			Sostinė:
-			{countryData.capital?.map((el, index) => (
+			Sostinė: {countryData.capital?.map((el, index) => (
 			<span key={index}> {el}. </span>
 			)) || "Nėra"}
 		</p>
