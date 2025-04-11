@@ -292,3 +292,7 @@ html {
 .footer span {
   font-style: normal;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
