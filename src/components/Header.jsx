@@ -4,17 +4,17 @@ import { SearchComponent } from "./SearchComponent";
 import { AllCountriesButton } from "./AllCountriesButton";
 
 export const Header = () => {
-  return (
-    <div className="header">
-      <AllCountriesButton />
-      <RegionButton region={"Asia"} />
-      <RegionButton region={"Europe"} />
-      <RegionButton region={"Africa"} />
-      <RegionButton region={"Oceania"} />
-      <RegionButton region={"North America"} />
-      <RegionButton region={"Antarctic"} />
-      <RegionButton region={"South America"} />
-      <SearchComponent />
-    </div>
-  );
+	return (
+		<div className="header">
+			<AllCountriesButton />
+			<RegionButton region={"Asia"} />
+			<RegionButton region={"Europe"} />
+			<RegionButton region={"Africa"} />
+			<RegionButton region={"Oceania"} />
+			<RegionButton region={"North America"} />
+			<RegionButton region={"Antarctic"} />
+			<RegionButton region={"South America"} />
+			<SearchComponent />
+		</div>
+	);
 };

@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 export const ShowMoreData = ({ countryData }) => {
 
-  return (
-    <Link to={`/details/${countryData?.name.common}`} state={{countryData: countryData}}>
-      <button className="countryBtn">More</button>
-    </Link>
-  );
+	return (
+		<Link to={`/details/${countryData?.name.common}`} state={{countryData: countryData}}>
+			<button className="countryBtn">Daugiau</button>
+		</Link>
+	);
 };
 

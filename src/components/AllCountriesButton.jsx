@@ -3,7 +3,7 @@ import { getAllData } from "../services/getAllData";
 import DataContext from "../context/DataContext.jsx";
 
 export const AllCountriesButton = () => {
-  const { data, setData } = useContext(DataContext);
+  const {setData } = useContext(DataContext);
 
   const writeData = async () => {
     const allData = await getAllData();
@@ -12,9 +12,9 @@ export const AllCountriesButton = () => {
 
   return (
     <div>
-      <button onClick={() => writeData()} style={{ backgroundColor: "black" }}>
-        All
-      </button>
+      	<button onClick={() => writeData()} style={{ backgroundColor: "black" }}>
+        	Visi
+      	</button>
     </div>
   );
 };
